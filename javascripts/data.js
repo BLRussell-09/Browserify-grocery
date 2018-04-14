@@ -1,8 +1,9 @@
 const startApp = require('./departments');
+const domBuilder = require('./dom');
 
 const successFunction = function () {
   const data = JSON.parse(this.responseText).departments;
-  console.log(data);
+  domBuilder(data);
 };
 
 const failFunction = function () {
