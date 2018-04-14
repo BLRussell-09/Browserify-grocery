@@ -10,3 +10,14 @@ body {
  .department {
   margin: 20px 0
 }
+
+.grey-out {
+  opacity: 0.4;
+}
+
+.department-title {
+  color: green;
+  position: absolute;
+  top: 50px;
+  font-size: 50px;
+}
