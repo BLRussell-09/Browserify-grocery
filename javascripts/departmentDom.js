@@ -1,6 +1,6 @@
 const events = require('./events');
 
-const printToDom = (domString, divId) => {
+const printToDepDom = (domString, divId) => {
   document.getElementById(divId).innerHTML += domString;
   events.addDepartmentEvents();
 };
@@ -13,7 +13,7 @@ const domBuilder = (depArr) => {
     domString += `<img class="department-image"src="${element.img}">`;
     domString += `</div>`;
   });
-  printToDom(domString, 'depHolder');
+  printToDepDom(domString, 'depHolder');
 };
 
 module.exports = domBuilder;

@@ -1,19 +1,14 @@
-const startApp = require('./departments');
-const domBuilder = require('./dom');
+const departments = [];
 
-const successFunction = function () {
-  const data = JSON.parse(this.responseText).departments;
-  domBuilder(data);
+const getdepartments = () => {
+  return departments;
 };
 
-const failFunction = function () {
-  console.log('Something broke.');
-};
-
-const initializer = () => {
-  startApp(successFunction, failFunction);
+const setDepartments = (departmentsArray) => {
+  departments = departmentsArray;
 };
 
 module.exports = {
-  initializer,
+  getdepartments,
+  setDepartments,
 };
