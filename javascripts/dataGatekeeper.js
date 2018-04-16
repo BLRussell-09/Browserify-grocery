@@ -11,7 +11,7 @@ const successFunction = function () {
 
 const whenItemsLoad = function () {
   const itemsData = JSON.parse(this.responseText).items;
-  console.log(itemsData);
+  data.setItems(itemsData);
 };
 
 const failFunction = function () {
