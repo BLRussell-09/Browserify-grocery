@@ -1,4 +1,4 @@
-const departments = [];
+let departments = [];
 
 const getdepartments = () => {
   return departments;
