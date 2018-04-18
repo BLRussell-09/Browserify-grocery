@@ -1,12 +1,14 @@
 const startApp = require('./departments');
-const loadItems = require('./items.js');
+const loadItems = require('./items');
 const domBuilder = require('./departmentDom');
 const data = require('./data');
 
+const depArray = [];
+
 const successFunction = function () {
-  const depData = JSON.parse(this.responseText).departments;
-  data.setDepartments(depData);
-  domBuilder(depData);
+  const depArray = JSON.parse(this.responseText).departments;
+  data.setDepartments(depArray);
+  domBuilder(depArray);
 };
 
 const whenItemsLoad = function () {
@@ -23,6 +25,12 @@ const initializer = () => {
   loadItems(whenItemsLoad, failFunction);
 };
 
+const getDeps = () =>
+{
+  return depArray;
+};
+
 module.exports = {
   initializer,
+  getDeps,
 };
